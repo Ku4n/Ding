@@ -1,13 +1,15 @@
 <?php
 namespace app\index\controller;
 
+use think\Controller;
 use think\Db;
+use app\common\http as commonHttp;
 
-class Index
+class Index extends Controller
 {
     public function index()
     {
-        return '123';
+        echo 123;
     }
 
     /**
@@ -56,7 +58,7 @@ class Index
      */
     static public function get($url){
         $oCurl = curl_init();
-        if(stripos($url,"https://")!==FALSE){
+        if(stripos($url,"http://")!==FALSE){
             curl_setopt($oCurl, CURLOPT_SSL_VERIFYPEER, FALSE);
             curl_setopt($oCurl, CURLOPT_SSL_VERIFYHOST, FALSE);
             curl_setopt($oCurl, CURLOPT_SSLVERSION, 1); //CURL_SSLVERSION_TLSv1

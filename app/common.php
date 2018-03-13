@@ -10,3 +10,16 @@
 // +----------------------------------------------------------------------
 
 // 应用公共文件
+namespace app\common;
+
+class Common
+{
+    public function header()
+    {
+        header('Access-Control-Allow-Origin:*');
+        header('Access-Control-Allow-Methods: POST, GET,OPTIONS');
+        header('Access-Control-Allow-Headers: Authorisation,Content-Type,Accept');
+    }
+}
+
+?>
